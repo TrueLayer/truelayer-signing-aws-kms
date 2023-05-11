@@ -1,0 +1,25 @@
+{
+  "name": "kms-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node -r dotenv/config dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.1.2",
+    "dotenv": "^16.0.3",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.329.0",
+    "base64url": "^3.0.1",
+    "ecdsa-sig-formatter": "^1.0.11",
+    "truelayer-signing": "^0.1.6"
+  }
+}
