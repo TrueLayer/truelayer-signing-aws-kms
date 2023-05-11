@@ -18,8 +18,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-kms": "^3.329.0",
-    "base64url": "^3.0.1",
     "ecdsa-sig-formatter": "^1.0.11",
+    "js-base64": "^3.7.5",
     "truelayer-signing": "^0.1.6"
   }
 }

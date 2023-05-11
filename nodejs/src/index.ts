@@ -4,7 +4,7 @@ import { AWS_CONFIG, MERCHANT_DATA_FROM_DB, REQUEST_DATA, REQUIRED_HEADERS } fro
  * SIGNING *
  ***********/
 import { KMSClient, SignCommand } from "@aws-sdk/client-kms";
-import base64url from "base64url";
+import { Base64 } from "js-base64";
 import ecdsaSigFormatter from "ecdsa-sig-formatter";
 
 // Build the signature payload
@@ -20,8 +20,8 @@ ${REQUIRED_HEADERS.map(headerName => `${headerName}: ${REQUEST_DATA.headers[head
 ${REQUEST_DATA.body}`;
 
 const jwsSigningInputs = {
-  headers: base64url(JSON.stringify(jwsHeaders)),
-  payload: base64url(jwsPayload),
+  headers: Base64.encodeURI(JSON.stringify(jwsHeaders)),
+  payload: Base64.encodeURI(jwsPayload),
 };
 const message = Buffer.from(`${jwsSigningInputs.headers}.${jwsSigningInputs.payload}`);
 
